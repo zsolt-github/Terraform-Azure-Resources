@@ -4,6 +4,6 @@ resource "azurerm_resource_group" "azure-rg-practice" {
 
   tags = {
     "ResourceType" = "Resrouce Group"
-    "Evironment"   = "test"
+    "Evironment"   = "Practice"
   }
 }

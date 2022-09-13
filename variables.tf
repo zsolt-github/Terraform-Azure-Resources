@@ -37,6 +37,13 @@ variable "az_subnet_address_prefix" {
 }
 
 
+# Variable for Azure Network Security Groupe
+variable "az_nsg_name" {
+    type = string
+    description = "Name of the Azure Network Security Group."
+}
+
+
 # Variables for the Azure Container Registry
 
 variable "acr_name" {
