@@ -24,23 +24,49 @@ variable "az_virtual_network_address_space" {
 }
 
 
-# Variables for Azure the Subnet
+# Variables for the Azure Subnets
 
-variable "az_subnet_name" {
+variable "az_subnet_1_name" {
     type = string
-    description = "Name of the Subnet in Azure."
+    description = "Name of Subnet 1 in Azure."
 }
 
-variable "az_subnet_address_prefix" {
+variable "az_subnet_1_address_prefix" {
     type = string
-    description = "The address space of the Subnet in Azure."
+    description = "The address space of Subnet 1 in Azure."
+}
+
+variable "az_subnet_2_name" {
+    type = string
+    description = "Name of Subnet 2 in Azure."
+}
+
+variable "az_subnet_2_address_prefix" {
+    type = string
+    description = "The address space of Subnet 2 in Azure."
+}
+
+variable "az_subnet_3_name" {
+    type = string
+    description = "Name of Subnet 3 in Azure."
+}
+
+variable "az_subnet_3_address_prefix" {
+    type = string
+    description = "The address space of Subnet 3 in Azure."
 }
 
 
-# Variable for Azure Network Security Groupe
-variable "az_nsg_name" {
+# Variable for Azure Network Security Groups
+
+variable "az_nsg_1_name" {
     type = string
-    description = "Name of the Azure Network Security Group."
+    description = "Name of  Azure Network Security Group 1."
+}
+
+variable "az_nsg_2_name" {
+    type = string
+    description = "Name of  Azure Network Security Group 2."
 }
 
 
