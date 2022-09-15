@@ -1,4 +1,3 @@
-/*
 resource "azurerm_subnet" "azure-subnet-1-practice" {
   name                 = var.az_subnet_1_name
   resource_group_name  = var.az_resource_group_name
@@ -22,4 +21,3 @@ resource "azurerm_subnet" "azure-subnet-3-practice" {
   address_prefixes     = [var.az_subnet_3_address_prefix]
   depends_on           = [azurerm_virtual_network.azure-vnet-practice]
 }
-*/

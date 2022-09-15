@@ -57,18 +57,35 @@ variable "az_subnet_3_address_prefix" {
 }
 
 
-# Variable for Azure Network Security Groups
+# Variables for Azure Network Security Groups
 
 variable "az_nsg_1_name" {
     type = string
-    description = "Name of  Azure Network Security Group 1."
+    description = "Name of Azure Network Security Group 1."
 }
 
 variable "az_nsg_2_name" {
     type = string
-    description = "Name of  Azure Network Security Group 2."
+    description = "Name of Azure Network Security Group 2."
 }
 
+variable "az_nsg_3_name" {
+    type = string
+    description = "Name of Azure Network Security Group 3."
+}
+
+
+# Variables for Azure Network Interface(s)
+
+variable "az_net_int-1" {
+    type = string
+    description = "Name of Azure Network Interface 1."
+}
+
+variable "az_net_int-2" {
+    type = string
+    description = "Name of Azure Network Interface 2."
+}
 
 # Variables for the Azure Container Registry
 
