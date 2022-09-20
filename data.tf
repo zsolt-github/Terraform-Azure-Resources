@@ -1,3 +1,7 @@
+
+data "azurerm_client_config" "current" {}
+
+
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/virtual_network
 
 data "azurerm_virtual_network" "data-virtual_network" {

@@ -1,3 +1,11 @@
+# Variable for the environment
+
+variable "az_env_postfix" {
+    type = string
+    description = "The postfix which should be used for all resources in this environment."
+}
+
+
 # Variables for the Azure Resource Group
 
 variable "az_resource_group_name" {
@@ -142,6 +150,18 @@ variable "az_public_ip_1_type" {
     type = string
     description = "Type of Public IP 1."
 }
+
+
+
+
+# Variables for the Azure Key Vault
+
+variable "az_key_vault_name" {
+    type = string
+    description = "Name for Azure Key Vault."
+}
+
+
 
 
 

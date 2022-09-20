@@ -1,5 +1,8 @@
+# Azure Environment postfix variable
+az_env_postfix = "Practice-TF"
+
 # Azure main variables
-az_resource_group_name = "RG-Practice-TF"
+az_resource_group_name = "RG-${var.az_env_postfix}"
 az_location = "UKWest"
 
 az_virtual_network_name          = "VNET-Practice-TF"
@@ -43,6 +46,12 @@ az_storage_account_replication_type = "LRS"
 # Azure Public IP variables
 az_public_ip_1_name = "PIP-1-Practice-TF"
 az_public_ip_1_type = "Dynamic"
+
+
+# Azure Key Vault variables
+az_key_vault_name = "KV-Practice-TF"
+
+
 
 
 # Azure Container Registry
