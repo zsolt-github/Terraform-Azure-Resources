@@ -13,14 +13,14 @@ data "azurerm_subnet" "data-subnet_1" {
   name                 = var.az_subnet_1_name
   virtual_network_name = var.az_virtual_network_name
   resource_group_name  = var.az_resource_group_name
-  depends_on           = [azurerm_virtual_network.azure-vnet-practice]
+  depends_on           = [azurerm_subnet.azure-subnet-1-practice]
 }
 
 data "azurerm_subnet" "data-subnet_2" {
   name                 = var.az_subnet_2_name
   virtual_network_name = var.az_virtual_network_name
   resource_group_name  = var.az_resource_group_name
-  depends_on           = [azurerm_virtual_network.azure-vnet-practice]
+  depends_on           = [azurerm_subnet.azure-subnet-2-practice]
 }
 
 

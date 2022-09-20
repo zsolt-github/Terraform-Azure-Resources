@@ -87,6 +87,64 @@ variable "az_net_int-2" {
     description = "Name of Azure Network Interface 2."
 }
 
+
+ #Variables for Azure Virtual Machine(s)
+
+variable "az_virtual_machine_1_name" {
+    type = string
+    description = "Name of Virtual Machine 1."
+}
+
+variable "az_virtual_machine_1_size" {
+    type = string
+    description = "Name of Virtual Machine 1."
+}
+
+variable "az_virtual_machine_1_admin_user_name" {
+    type = string
+    description = "Name of the admin user for Virtual Machine 1."
+}
+
+variable "az_virtual_machine_1_admin_user_password" {
+    type = string
+    description = "Password of the admin user for Virtual Machine 1."
+}
+
+
+
+# Variables for the Azure Storage Account(s)
+
+variable "az_storage_account_1_name" {
+    type = string
+    description = "Name for Storage Account 1."
+}
+
+variable "az_storage_account_1_tier" {
+    type = string
+    description = "Name for Storage Account 1."
+}
+
+variable "az_storage_account_replication_type" {
+    type = string
+    description = "Name for Storage Account 1."
+}
+
+
+
+# Variables for the Azure Public IP(s)
+
+variable "az_public_ip_1_name" {
+    type = string
+    description = "Name for Azure Public IP 1."
+}
+
+variable "az_public_ip_1_type" {
+    type = string
+    description = "Type of Public IP 1."
+}
+
+
+
 # Variables for the Azure Container Registry
 
 variable "acr_name" {
