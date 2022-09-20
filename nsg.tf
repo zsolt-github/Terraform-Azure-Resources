@@ -1,10 +1,10 @@
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_security_group
 
-resource "azurerm_network_security_group" "azure-nsg-1-practice" {
+resource "azurerm_network_security_group" "azure-nsg-1" {
   name                = var.az_nsg_1_name
   location            = var.az_location
   resource_group_name = var.az_resource_group_name
-  depends_on          = [azurerm_resource_group.azure-rg-practice]
+  depends_on          = [azurerm_resource_group.azure-rg]
 
   security_rule {
     name                       = "Inbound - HTTPS"
@@ -24,11 +24,11 @@ resource "azurerm_network_security_group" "azure-nsg-1-practice" {
   }
 }
 
-resource "azurerm_network_security_group" "azure-nsg-2-practice" {
+resource "azurerm_network_security_group" "azure-nsg-2" {
   name                = var.az_nsg_2_name
   location            = var.az_location
   resource_group_name = var.az_resource_group_name
-  depends_on          = [azurerm_resource_group.azure-rg-practice]
+  depends_on          = [azurerm_resource_group.azure-rg]
 
   security_rule {
     name                       = "Inbound - RDP"
@@ -48,11 +48,11 @@ resource "azurerm_network_security_group" "azure-nsg-2-practice" {
   }
 }
 
-resource "azurerm_network_security_group" "azure-nsg-3-practice" {
+resource "azurerm_network_security_group" "azure-nsg-3" {
   name                = var.az_nsg_3_name
   location            = var.az_location
   resource_group_name = var.az_resource_group_name
-  depends_on          = [azurerm_resource_group.azure-rg-practice]
+  depends_on          = [azurerm_resource_group.azure-rg]
 
   security_rule {
     name                       = "Inbound - SMB"

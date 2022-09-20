@@ -2,7 +2,7 @@
 
 # Specifying a Virtual Network without Subnet(s)
 
-resource "azurerm_virtual_network" "azure-vnet-practice" {
+resource "azurerm_virtual_network" "azure-vnet" {
   name                = var.az_virtual_network_name
   location            = var.az_location
   resource_group_name = var.az_resource_group_name
