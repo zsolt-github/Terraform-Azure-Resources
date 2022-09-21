@@ -8,11 +8,11 @@ resource "azurerm_virtual_network" "azure-vnet" {
   resource_group_name = var.az_resource_group_name
   address_space       = [var.az_virtual_network_address_space]
   # dns_servers         = ["10.0.0.4", "10.0.0.5"]
-  depends_on          = [azurerm_resource_group.azure-rg-practice]
+  depends_on          = [azurerm_resource_group.azure-rg]
 
   tags = {
     "ResourceType" = "Virtual Network"
-    "Environment"  = "Practice"
+    "Environment"  = var.az_tag_environment
   }  
 }
 
@@ -21,24 +21,24 @@ resource "azurerm_virtual_network" "azure-vnet" {
 /*
 # Specifying a Virtual Network seperately with Subnet(s)
 
-resource "azurerm_virtual_network" "azure-vnet-practice" {
+resource "azurerm_virtual_network" "azure-vnet" {
   name                = var.az_virtual_network_name
   location            = var.az_location
   resource_group_name = var.az_resource_group_name
   address_space       = [var.az_virtual_network_address_space]
   # dns_servers         = ["10.0.0.4", "10.0.0.5"]
-  depends_on          = [azurerm_resource_group.azure-rg-practice]
+  depends_on          = [azurerm_resource_group.azure-rg]
 
   subnet {
     name           = var.az_subnet_1_name
     address_prefix = var.az_subnet_1_address_prefix
-    security_group = azurerm_network_security_group.azure-nsg-1-practice.id
+    security_group = azurerm_network_security_group.azure-nsg-1.id
   }
 
   subnet {
     name           = var.az_subnet_2_name
     address_prefix = var.az_subnet_2_address_prefix
-    security_group = azurerm_network_security_group.azure-nsg-2-practice.id
+    security_group = azurerm_network_security_group.azure-nsg-2.id
   }
 
   subnet {
@@ -48,7 +48,7 @@ resource "azurerm_virtual_network" "azure-vnet-practice" {
 
   tags = {
     ResourceType = "Virtual Network"
-    Environment  = "Practice"
+    Environment  = var.az_tag_environment
   }
 }
 */

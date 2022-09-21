@@ -15,7 +15,7 @@ This GitHub repo contains basic Terraform building blocks for the Azure cloud.
 ### Deployment Instructions
 * Clone this repository
 * Edit ```terraform.tfvars``` to match your values.
-* Delete the '''.tf''' files that contain resources that you don't need.
+* Delete the ```.tf``` files that contain resources that you don't need.
 * Run ```terraform init``` to download the Azure provider.
 * Run ```terraform plan``` to view the plan.
 * Run ```terraform apply``` and wait a couple of minutes until the resources created in the Azure cloud.

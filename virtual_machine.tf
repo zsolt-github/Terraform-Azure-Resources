@@ -13,14 +13,13 @@ resource "azurerm_windows_virtual_machine" "azure-windows_virtual_machine-1" {
 
   os_disk {
     caching              = "ReadWrite"
-    storage_account_type = "Standard_LRS"
+    storage_account_type = var.az_virtual_machine_1_storage_account_type
   }
 
   source_image_reference {
     publisher = "MicrosoftWindowsServer"
     offer     = "WindowsServer"
     sku       = "2022-Datacenter"
-    # sku       = "2022-Datacenter"
     version   = "latest"
   }
   

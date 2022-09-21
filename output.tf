@@ -1,3 +1,13 @@
+# https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/public_ip
+
+output "output-public_ip_1_address" {
+  value = data.azurerm_public_ip.data-public_ip_1.ip_address
+}
+
+
+
+
+/*
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/virtual_network
 
 output "output-virtual_network_id" {
@@ -26,15 +36,4 @@ output "output-nsg_1_location" {
   value = data.azurerm_network_security_group.data-nsg_1.location
 }
 
-
-# https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/public_ip
-
-output "output-public_ip_1_address" {
-  value = data.azurerm_public_ip.data-public_ip_1.ip_address
-}
-
-
-
-
-
-
+*/

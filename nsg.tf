@@ -7,13 +7,13 @@ resource "azurerm_network_security_group" "azure-nsg-1" {
   depends_on          = [azurerm_resource_group.azure-rg]
 
   security_rule {
-    name                       = "Inbound - HTTPS"
-    priority                   = 100
+    name                       = "Inbound - RDP"
+    priority                   = 110
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
-    source_port_range          = "443"
-    destination_port_range     = "443"
+    source_port_range          = "*"
+    destination_port_range     = "3389"
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
@@ -31,16 +31,16 @@ resource "azurerm_network_security_group" "azure-nsg-2" {
   depends_on          = [azurerm_resource_group.azure-rg]
 
   security_rule {
-    name                       = "Inbound - RDP"
-    priority                   = 110
+    name                       = "Inbound - HTTPS"
+    priority                   = 100
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
-    source_port_range          = "3389"
-    destination_port_range     = "3389"
+    source_port_range          = "443"
+    destination_port_range     = "443"
     source_address_prefix      = "*"
     destination_address_prefix = "*"
-  }
+   }
 
   tags = {
     "ResourceType" = "Network Security Group"

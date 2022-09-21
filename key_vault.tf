@@ -5,9 +5,10 @@ resource "azurerm_key_vault" "azure-key_vault" {
   location                    = var.az_location
   resource_group_name         = var.az_resource_group_name
   tenant_id                   = data.azurerm_client_config.current.tenant_id
-  sku_name                    = "premium"
+  sku_name                    = var.az_key_vault_sku
   enabled_for_disk_encryption = true
   purge_protection_enabled    = true
+  depends_on                  = [azurerm_resource_group.azure-rg]
 }
 
 
@@ -17,6 +18,7 @@ resource "azurerm_key_vault_access_policy" "azure-key_vault_access_poicy-1" {
   key_vault_id = azurerm_key_vault.azure-key_vault.id
   tenant_id    = data.azurerm_client_config.current.tenant_id
   object_id    = data.azurerm_client_config.current.object_id
+  depends_on   = [azurerm_key_vault.azure-key_vault]
 
   key_permissions = [
     "Create",
@@ -31,6 +33,7 @@ resource "azurerm_key_vault_access_policy" "azure-key_vault_access_poicy-1" {
     "Set",
   ]
 }
+
 
 
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_key

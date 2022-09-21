@@ -140,6 +140,12 @@ variable "az_virtual_machine_1_admin_user_password" {
     description = "Password of the admin user for Virtual Machine 1."
 }
 
+variable "az_virtual_machine_1_storage_account_type" {
+    type = string
+    description = "Storage account type for Virtual Machine 1. (Standard_LRS, StandardSSD_LRS, Premium_LRS, StandardSSD_ZRS and Premium_ZRS)"
+}
+
+
 
 
 # Variables for the Azure Storage Account(s)
@@ -176,7 +182,10 @@ variable "az_key_vault_name" {
     description = "Name for Azure Key Vault."
 }
 
-
+variable "az_key_vault_sku" {
+    type = string
+    description = "SKU of the Azure Key Vault. (strandard or premium)"
+}
 
 
 
