@@ -30,6 +30,6 @@ resource "azurerm_windows_virtual_machine" "azure-windows_virtual_machine-1" {
 
   tags = {
     "ResourceType" = "Virtual Machine"
-    "Environment"  = "Practice"
+    "Environment"  = var.az_tag_environment
   }
 }

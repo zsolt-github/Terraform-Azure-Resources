@@ -1,5 +1,7 @@
 # Azure Environment postfix variable
-az_env_postfix = "Practice-TF"
+az_env_postfix     = "Practice-TF"
+az_tag_environment = "Demo"
+
 
 # Azure main variables
 az_resource_group_name = "RG-${var.az_env_postfix}"
@@ -30,6 +32,12 @@ az_net_int-1 ="NI-1-Practice-TF"
 az_net_int-2 ="NI-2-Practice-TF"
 
 
+# Azure Public IP variables
+az_public_ip_1_name = "PIP-1-Practice-TF"
+az_public_ip_1_type = "Dynamic"
+az_public_ip_1_sku  = "Standard"
+
+
 # Azure Virtual Machines variable
 az_virtual_machine_1_name                = "VM-1-Practice-TF"
 az_virtual_machine_1_size                = "Standard_B2s"
@@ -39,13 +47,9 @@ az_virtual_machine_1_admin_user_password = "P@$$w0rd1234!"
 
 # Azure Storage Accounts variables
 az_storage_account_1_name           = "sa1practicetf"
+#az_storage_account_1_kind           = "Storagev2"
 az_storage_account_1_tier           = "Standard"
 az_storage_account_replication_type = "LRS"
-
-
-# Azure Public IP variables
-az_public_ip_1_name = "PIP-1-Practice-TF"
-az_public_ip_1_type = "Dynamic"
 
 
 # Azure Key Vault variables

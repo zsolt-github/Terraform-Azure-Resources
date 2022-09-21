@@ -6,6 +6,6 @@ resource "azurerm_resource_group" "azure-rg" {
 
   tags = {
     "ResourceType" = "Resrouce Group"
-    "Evironment"   = "Practice"
+    "Evironment"   = var.az_tag_environment
   }
 }

@@ -5,6 +5,10 @@ variable "az_env_postfix" {
     description = "The postfix which should be used for all resources in this environment."
 }
 
+variable "az_tag_environment" {
+    type = string
+    description = "The environment tag."
+}
 
 # Variables for the Azure Resource Group
 
@@ -96,6 +100,24 @@ variable "az_net_int-2" {
 }
 
 
+# Variables for the Azure Public IP(s)
+
+variable "az_public_ip_1_name" {
+    type = string
+    description = "Name for Azure Public IP 1."
+}
+
+variable "az_public_ip_1_type" {
+    type = string
+    description = "Type of Public IP 1."
+}
+
+variable "az_public_ip_1_sku" {
+    type = string
+    description = "SKU of Public IP 1."
+}
+
+
  #Variables for Azure Virtual Machine(s)
 
 variable "az_virtual_machine_1_name" {
@@ -127,29 +149,22 @@ variable "az_storage_account_1_name" {
     description = "Name for Storage Account 1."
 }
 
+variable "az_storage_account_1_kind" {
+    type = string
+    description = "Kind of Storage Account 1. (BlobStorage, BlockBlobStorage, FileStorage, Storage and StorageV2)"
+}
+
 variable "az_storage_account_1_tier" {
     type = string
-    description = "Name for Storage Account 1."
+    description = "Name for Storage Account 1. (Standard or Premium)"
 }
 
 variable "az_storage_account_replication_type" {
     type = string
-    description = "Name for Storage Account 1."
+    description = "Name for Storage Account 1. (LRS, GRS, RAGRS, ZRS, GZRS and RAGZRS)"
 }
 
 
-
-# Variables for the Azure Public IP(s)
-
-variable "az_public_ip_1_name" {
-    type = string
-    description = "Name for Azure Public IP 1."
-}
-
-variable "az_public_ip_1_type" {
-    type = string
-    description = "Type of Public IP 1."
-}
 
 
 

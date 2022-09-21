@@ -1,3 +1,5 @@
+# https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault
+
 resource "azurerm_key_vault" "azure-key_vault" {
   name                        = var.az_key_vault_name
   location                    = var.az_location
@@ -7,6 +9,9 @@ resource "azurerm_key_vault" "azure-key_vault" {
   enabled_for_disk_encryption = true
   purge_protection_enabled    = true
 }
+
+
+# https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_access_policy
 
 resource "azurerm_key_vault_access_policy" "azure-key_vault_access_poicy-1" {
   key_vault_id = azurerm_key_vault.azure-key_vault.id
@@ -26,6 +31,9 @@ resource "azurerm_key_vault_access_policy" "azure-key_vault_access_poicy-1" {
     "Set",
   ]
 }
+
+
+# https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_key
 
 resource "azurerm_key_vault_key" "azure-key_vault_key-1" {
   name         = "azurekeyvaultkey-1"

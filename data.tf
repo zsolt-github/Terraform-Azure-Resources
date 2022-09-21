@@ -37,10 +37,12 @@ data "azurerm_network_security_group" "data-nsg_1" {
 }
 
 
+# https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/public_ip
 
-
-
-
+data "azurerm_public_ip" "data-public_ip_1" {
+  name                = var.az_public_ip_1_name
+  resource_group_name = var.az_resource_group_name
+}
 
 
 
