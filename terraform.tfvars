@@ -67,6 +67,8 @@ az_virtual_machine_scale_set_public_key      =  "ssh-rsa AAAAB3NzaC1yc2EAAAADAQA
 az_virtual_machine_scale_set_storage_account_type = "StandardSSD_LRS"
 
 
+# Azure Virtual Machine Scale Set Auto Scale Config variables
+az_virtual_machine_scale_set_auto_scale_name = "VMSSASC-Demo-TF"
 
 
 # Azure Container Registry

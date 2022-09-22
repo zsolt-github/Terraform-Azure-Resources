@@ -226,6 +226,15 @@ variable "az_virtual_machine_scale_set_storage_account_type" {
 
 
 
+# Variables for the Virtual Machine Scale Set
+
+variable "az_virtual_machine_scale_set_auto_scale_name" {
+    type        = string
+    description = "Name for Azure Virtual Machine Scale Set."
+}
+
+
+
 # Variables for the Azure Container Registry
 
 variable "acr_name" {
