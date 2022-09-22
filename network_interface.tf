@@ -13,9 +13,11 @@ resource "azurerm_network_interface" "azure-net_int-1" {
     private_ip_address_allocation = "Dynamic"
     # private_ip_address_allocation = "Static"
     # private_ip_address            = "10.10.1.122"
-
+        
     public_ip_address_id          = azurerm_public_ip.azure-public_ip-1.id
   }
+
+  # network_security_group_id     = azurerm_network_security_group.azure-nsg-2.id
 
   tags = {
     "ResourceType" = "Network Interface"
