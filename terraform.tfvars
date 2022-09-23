@@ -4,8 +4,8 @@ az_tag_environment = "Demo"
 
 
 # Azure main variables
+az_location            = "UKWest"
 az_resource_group_name = "RG-Demo-TF"
-az_location = "UKWest"
 
 az_virtual_network_name          = "VNET-Demo-TF"
 az_virtual_network_address_space = "10.10.0.0/16"
@@ -59,16 +59,22 @@ az_key_vault_sku  = "standard"
 
 
 # Azure Virtual Machine Scale Set variables
-az_virtual_machine_scale_set_name            = "VMSS-Demo-TF"
-az_virtual_machine_scale_set_sku             = "Standard_B2s"
-az_virtual_machine_scale_set_instances       = 2
-az_virtual_machine_scale_set_admin_user_name = "adminuser"
-az_virtual_machine_scale_set_public_key      =  "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC+wWK73dCr+jgQOAxNsHAnNNNMEMWOHYEccp6wJm2gotpr9katuF/ZAdou5AaW1C61slRkHRkpRRX9FA9CYBiitZgvCCz+3nWNN7l/Up54Zps/pHWGZLHNJZRYyAB6j5yVLMVHIHriY49d/GZTZVNB8GoJv9Gakwc/fuEZYYl4YDFiGMBP///TzlI4jhiJzjKnEvqPFki5p2ZRJqcbCiF4pJrxUQR/RXqVFQdbRLZgYfJ8xGB878RENq3yQ39d8dVOkq4edbkzwcUmwwwkYVPIoDGsYLaRHnG+To7FvMeyO7xDVQkMKzopTQV8AuKpyvpqu0a9pWOMaiCyDytO7GGN you@me.com"
+az_virtual_machine_scale_set_name                 = "VMSS-Demo-TF"
+az_virtual_machine_scale_set_sku                  = "Standard_B2s"
+az_virtual_machine_scale_set_instances            = 2
+az_virtual_machine_scale_set_admin_user_name      = "adminuser"
+az_virtual_machine_scale_set_public_key           =  "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC+wWK73dCr+jgQOAxNsHAnNNNMEMWOHYEccp6wJm2gotpr9katuF/ZAdou5AaW1C61slRkHRkpRRX9FA9CYBiitZgvCCz+3nWNN7l/Up54Zps/pHWGZLHNJZRYyAB6j5yVLMVHIHriY49d/GZTZVNB8GoJv9Gakwc/fuEZYYl4YDFiGMBP///TzlI4jhiJzjKnEvqPFki5p2ZRJqcbCiF4pJrxUQR/RXqVFQdbRLZgYfJ8xGB878RENq3yQ39d8dVOkq4edbkzwcUmwwwkYVPIoDGsYLaRHnG+To7FvMeyO7xDVQkMKzopTQV8AuKpyvpqu0a9pWOMaiCyDytO7GGN you@me.com"
 az_virtual_machine_scale_set_storage_account_type = "StandardSSD_LRS"
 
 
 # Azure Virtual Machine Scale Set Auto Scale Config variables
 az_virtual_machine_scale_set_auto_scale_name = "VMSSASC-Demo-TF"
+az_virtual_machine_scale_set_upgrade_mode    = "Rolling"
+
+
+# Azure Load Balancer variables
+az_load_balancer_name = "LB-Demo-TF"
+
 
 
 # Azure Container Registry

@@ -9,7 +9,7 @@ resource "azurerm_public_ip" "azure-public_ip-1" {
   depends_on                   = [azurerm_resource_group.azure-rg]
 
 tags = {
-    "ResourceType" = "Resrouce Group"
+    "ResourceType" = "Public IP"
     "Evironment"   = var.az_tag_environment
   }
 }

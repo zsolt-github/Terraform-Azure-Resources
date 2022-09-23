@@ -7,7 +7,8 @@ resource "azurerm_linux_virtual_machine_scale_set" "azure-vmss" {
   sku                 = var.az_virtual_machine_scale_set_sku
   instances           = var.az_virtual_machine_scale_set_instances
   admin_username      = var.az_virtual_machine_scale_set_admin_user_name
-  depends_on          = [azurerm_resource_group.azure-rg, azurerm_subnet.azure-subnet-1, azurerm_public_ip.azure-public_ip-1]
+  upgrade_mode        = var.az_virtual_machine_scale_set_upgrade_mode
+  depends_on          = [azurerm_resource_group.azure-rg, azurerm_subnet.azure-subnet-1, azurerm_public_ip.azure-public_ip-1, azurerm_lb_rule.azure-load_ballancer-rule-1]
 
   admin_ssh_key {
     username   = var.az_virtual_machine_scale_set_admin_user_name
@@ -32,12 +33,15 @@ resource "azurerm_linux_virtual_machine_scale_set" "azure-vmss" {
     network_security_group_id = azurerm_network_security_group.azure-nsg-4.id
     
     ip_configuration {
-      name      = "Internal_IP-1"
-      primary   = true
-      subnet_id = azurerm_subnet.azure-subnet-1.id
+      name                                   = "Internal_IP-1"
+      primary                                = true
+      subnet_id                              = azurerm_subnet.azure-subnet-1.id
+      load_balancer_backend_address_pool_ids = [azurerm_lb_backend_address_pool.azure-load_ballancer-backend_pool.id]
+      load_balancer_inbound_nat_rules_ids    = [azurerm_lb_nat_pool.azure-load_ballancer-nat_pool.id]
     }
   }
 
+/*
   network_interface {
     name                      = "Network_Interface-2"
     network_security_group_id = azurerm_network_security_group.azure-nsg-4.id
@@ -48,9 +52,17 @@ resource "azurerm_linux_virtual_machine_scale_set" "azure-vmss" {
       subnet_id = azurerm_subnet.azure-subnet-2.id
     }
   }
+*/
 
   identity {
     type = "SystemAssigned"
+  }
+
+  rolling_upgrade_policy {
+    max_batch_instance_percent              = 25
+    max_unhealthy_instance_percent          = 25
+    max_unhealthy_upgraded_instance_percent = 10
+    pause_time_between_batches              = "PT15M"
   }
 
 #  boot_diagnostics {

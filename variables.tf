@@ -230,13 +230,29 @@ variable "az_virtual_machine_scale_set_storage_account_type" {
 }
 
 
-
 # Variables for the Virtual Machine Scale Set
 
 variable "az_virtual_machine_scale_set_auto_scale_name" {
     type        = string
-    description = "Name for Azure Virtual Machine Scale Set."
+    description = "Name for Azure Virtual Machine Scale Set Auto Scale config."
 }
+
+variable "az_virtual_machine_scale_set_upgrade_mode" {
+    type        = string
+    description = "Upgrade mode for Azure Virtual Machine Scale Set."
+}
+
+
+# Variables for the Load Balancer
+
+variable "az_load_balancer_name" {
+    type        = string
+    description = "Name for Azure Load Balancer."
+}
+
+
+
+
 
 
 
