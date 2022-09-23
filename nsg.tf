@@ -20,7 +20,7 @@ resource "azurerm_network_security_group" "azure-nsg-1" {
 
   tags = {
     "ResourceType" = "Network Security Group"
-    "Environment"  = "Practice"
+    "Environment"  = var.az_tag_environment
   }
 }
 
@@ -36,7 +36,7 @@ resource "azurerm_network_security_group" "azure-nsg-2" {
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
-    source_port_range          = "443"
+    source_port_range          = "*"
     destination_port_range     = "443"
     source_address_prefix      = "*"
     destination_address_prefix = "*"
@@ -44,7 +44,7 @@ resource "azurerm_network_security_group" "azure-nsg-2" {
 
   tags = {
     "ResourceType" = "Network Security Group"
-    "Environment"  = "Practice"
+    "Environment"  = var.az_tag_environment
   }
 }
 
@@ -60,7 +60,7 @@ resource "azurerm_network_security_group" "azure-nsg-3" {
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
-    source_port_range          = "445"
+    source_port_range          = "*"
     destination_port_range     = "445"
     source_address_prefix      = "*"
     destination_address_prefix = "*"
@@ -68,6 +68,30 @@ resource "azurerm_network_security_group" "azure-nsg-3" {
 
   tags = {
     "ResourceType" = "Network Security Group"
-    "Environment"  = "Practice"
+    "Environment"  = var.az_tag_environment
+  }
+}
+
+resource "azurerm_network_security_group" "azure-nsg-4" {
+  name                = var.az_nsg_4_name
+  location            = var.az_location
+  resource_group_name = var.az_resource_group_name
+  depends_on          = [azurerm_resource_group.azure-rg]
+
+  security_rule {
+    name                       = "Inbound - SSH"
+    priority                   = 115
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "22"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+  }
+
+  tags = {
+    "ResourceType" = "Network Security Group"
+    "Environment"  = var.az_tag_environment
   }
 }

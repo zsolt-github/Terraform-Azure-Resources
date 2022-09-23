@@ -90,6 +90,11 @@ variable "az_nsg_3_name" {
     description = "Name of Azure Network Security Group 3."
 }
 
+variable "az_nsg_4_name" {
+    type        = string
+    description = "Name of Azure Network Security Group 3."
+}
+
 
 # Variables for Azure Network Interface(s)
 

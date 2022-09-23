@@ -1,5 +1,5 @@
 resource "azurerm_monitor_autoscale_setting" "azure-vmss_auto_scale_config" {
-  name                = var.az_virtual_machine_scale_set_auto_scale_nam
+  name                = var.az_virtual_machine_scale_set_auto_scale_name
   resource_group_name = var.az_resource_group_name
   location            = var.az_location
   target_resource_id  = azurerm_linux_virtual_machine_scale_set.azure-vmss.id
@@ -29,7 +29,7 @@ resource "azurerm_monitor_autoscale_setting" "azure-vmss_auto_scale_config" {
         direction = "Increase"
         type      = "ChangeCount"
         value     = "1"
-        cooldown  = "PT1M"
+        cooldown  = "PT5M"
       }
     }
 
@@ -49,7 +49,7 @@ resource "azurerm_monitor_autoscale_setting" "azure-vmss_auto_scale_config" {
         direction = "Decrease"
         type      = "ChangeCount"
         value     = "1"
-        cooldown  = "PT1M"
+        cooldown  = "PT5M"
       }
     }
   }

@@ -7,6 +7,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "azure-vmss" {
   sku                 = var.az_virtual_machine_scale_set_sku
   instances           = var.az_virtual_machine_scale_set_instances
   admin_username      = var.az_virtual_machine_scale_set_admin_user_name
+  depends_on          = [azurerm_resource_group.azure-rg, azurerm_subnet.azure-subnet-1, azurerm_public_ip.azure-public_ip-1]
 
   admin_ssh_key {
     username   = var.az_virtual_machine_scale_set_admin_user_name
@@ -26,24 +27,35 @@ resource "azurerm_linux_virtual_machine_scale_set" "azure-vmss" {
   }
 
   network_interface {
-    name    = "example"
-    primary = true
-    network_security_group_id = azurerm_network_security_group.azure-nsg-3.id
+    name                      = "Network_Interface-1"
+    primary                   = true
+    network_security_group_id = azurerm_network_security_group.azure-nsg-4.id
     
     ip_configuration {
-      name                      = "Internal_IP-1"
-      primary                   = true
-      subnet_id                 = azurerm_subnet.azure-subnet-2.id
+      name      = "Internal_IP-1"
+      primary   = true
+      subnet_id = azurerm_subnet.azure-subnet-1.id
     }
   }
 
-  # public_ip_address {
-        
-  # }
+  network_interface {
+    name                      = "Network_Interface-2"
+    network_security_group_id = azurerm_network_security_group.azure-nsg-4.id
+    
+    ip_configuration {
+      name      = "Internal_IP-2"
+      primary   = true
+      subnet_id = azurerm_subnet.azure-subnet-2.id
+    }
+  }
 
   identity {
     type = "SystemAssigned"
   }
+
+#  boot_diagnostics {
+#    storage_account_uri = azurerm_storage_account.main.primary_blob_endpoint
+#  }
 
 tags = {
     "ResourceType" = "Virtual Machine Scale Set"
