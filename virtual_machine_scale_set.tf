@@ -7,6 +7,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "azure-vmss" {
   sku                 = var.az_virtual_machine_scale_set_sku
   instances           = var.az_virtual_machine_scale_set_instances
   admin_username      = var.az_virtual_machine_scale_set_admin_user_name
+  health_probe_id     = azurerm_lb_probe.azure-load_ballancer-probe.id
   upgrade_mode        = var.az_virtual_machine_scale_set_upgrade_mode
   depends_on          = [azurerm_resource_group.azure-rg, azurerm_subnet.azure-subnet-1, azurerm_public_ip.azure-public_ip-1, azurerm_lb_rule.azure-load_ballancer-rule-1]
 
@@ -62,7 +63,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "azure-vmss" {
     max_batch_instance_percent              = 25
     max_unhealthy_instance_percent          = 25
     max_unhealthy_upgraded_instance_percent = 10
-    pause_time_between_batches              = "PT15M"
+    pause_time_between_batches              = "PT5M"
   }
 
 #  boot_diagnostics {
