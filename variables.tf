@@ -13,6 +13,8 @@ variable "az_tag_environment" {
     default     = "Demo"
 }
 
+
+
 # Variables for the Azure Resource Group
 
 variable "az_resource_group_name" {
@@ -27,6 +29,7 @@ variable "az_location" {
 }
 
 
+
 # Variables for the Azure Virtual Network
 
 variable "az_virtual_network_name" {
@@ -38,6 +41,7 @@ variable "az_virtual_network_address_space" {
     type        = string
     description = "The address space of the VLAN in Azure."
 }
+
 
 
 # Variables for the Azure Subnets
@@ -73,6 +77,7 @@ variable "az_subnet_3_address_prefix" {
 }
 
 
+
 # Variables for Azure Network Security Groups
 
 variable "az_nsg_1_name" {
@@ -96,6 +101,7 @@ variable "az_nsg_4_name" {
 }
 
 
+
 # Variables for Azure Network Interface(s)
 
 variable "az_net_int-1" {
@@ -107,6 +113,7 @@ variable "az_net_int-2" {
     type        = string
     description = "Name of Azure Network Interface 2."
 }
+
 
 
 # Variables for the Azure Public IP(s)
@@ -127,7 +134,8 @@ variable "az_public_ip_1_sku" {
 }
 
 
- #Variables for Azure Virtual Machine(s)
+
+#Variables for Azure Virtual Machine(s)
 
 variable "az_virtual_machine_1_name" {
     type        = string
@@ -157,7 +165,6 @@ variable "az_virtual_machine_1_storage_account_type" {
 
 
 
-
 # Variables for the Azure Storage Account(s)
 
 variable "az_storage_account_1_name" {
@@ -170,15 +177,34 @@ variable "az_storage_account_1_kind" {
     description = "Kind of Storage Account 1. (BlobStorage, BlockBlobStorage, FileStorage, Storage and StorageV2)"
 }
 
-variable "az_storage_account_1_tier" {
+
+variable "az_storage_account_1_account_tier" {
     type        = string
     description = "Name for Storage Account 1. (Standard or Premium)"
 }
 
-variable "az_storage_account_replication_type" {
+variable "az_storage_account_1_replication_type" {
     type        = string
     description = "Name for Storage Account 1. (LRS, GRS, RAGRS, ZRS, GZRS and RAGZRS)"
 }
+
+variable "az_storage_account_1_acces_tier" {
+    type        = string
+    description = "Access tier for Storage Account 1. (Hot, Cold, )"
+}
+
+
+
+variable "az_storage_conainer_1_name" {
+    type        = string
+    description = "Name for Storage Container 1. (Only lowercase alphanumeric characters and hyphens allowed)"
+}
+
+variable "az_storage_container_1_access_type" {
+    type        = string
+    description = "Acces type for Storage Container 1. (Blob, File)"
+}
+
 
 
 
@@ -230,6 +256,7 @@ variable "az_virtual_machine_scale_set_storage_account_type" {
 }
 
 
+
 # Variables for the Virtual Machine Scale Set
 
 variable "az_virtual_machine_scale_set_auto_scale_name" {
@@ -241,6 +268,7 @@ variable "az_virtual_machine_scale_set_upgrade_mode" {
     type        = string
     description = "Upgrade mode for Azure Virtual Machine Scale Set."
 }
+
 
 
 # Variables for the Load Balancer

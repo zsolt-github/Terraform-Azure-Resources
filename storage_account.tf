@@ -7,9 +7,13 @@ resource "azurerm_storage_account" "azure-storage_account-1" {
   resource_group_name      = var.az_resource_group_name
   location                 = var.az_location
   
-  # account_kind             = var.az_storage_account_1_kind
-  account_tier             = var.az_storage_account_1_tier
-  account_replication_type = var.az_storage_account_replication_type
+  account_tier                    = var.az_storage_account_1_account_tier
+  account_kind                    = var.az_storage_account_1_kind
+  account_replication_type        = var.az_storage_account_1_replication_type
+  enable_https_traffic_only       = true
+  access_tier                     = var.az_storage_account_1_acces_tier
+  # allow_nested_items_to_be_public = true
+
   depends_on               = [azurerm_resource_group.azure-rg]
 
 /*
