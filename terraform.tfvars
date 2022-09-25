@@ -58,10 +58,13 @@ az_storage_account_1_account_tier     = "Standard"
 az_storage_account_1_kind             = "StorageV2"
 az_storage_account_1_replication_type = "LRS"
 az_storage_account_1_acces_tier       = "Hot"
+az_storage_account_1_min_tls_version  = "TLS_1_2"
 
 az_storage_conainer_1_name            = "sc-demo-tf"
 az_storage_container_1_access_type    = "blob"
 
+az_storage_share_1_name               = "sd-demo-tf"
+az_storage_share_1_access_tier        = "Hot"
 
 
 # Azure Key Vault variables

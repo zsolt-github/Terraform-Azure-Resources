@@ -190,7 +190,12 @@ variable "az_storage_account_1_replication_type" {
 
 variable "az_storage_account_1_acces_tier" {
     type        = string
-    description = "Access tier for Storage Account 1. (Hot, Cold, )"
+    description = "Access tier for Storage Account 1. (Hot or Cool)"
+}
+
+variable "az_storage_account_1_min_tls_version" {
+    type        = string
+    description = "Minimum TLS version for Storage Account 1. (TLS1_0, TLS1_1 and TLS1_2)"
 }
 
 
@@ -202,9 +207,20 @@ variable "az_storage_conainer_1_name" {
 
 variable "az_storage_container_1_access_type" {
     type        = string
-    description = "Acces type for Storage Container 1. (Blob, File)"
+    description = "Acces type for Storage Container 1. (blob, container or private)"
 }
 
+
+
+variable "az_storage_share_1_name" {
+    type        = string
+    description = "Name for Storage Share 1. (Only lowercase alphanumeric characters and hyphens allowed)"
+}
+
+variable "az_storage_share_1_access_tier" {
+    type        = string
+    description = "Access Tier for Storage Share 1. (Hot, Cool, TransactionOptimized and Premium)"
+}
 
 
 

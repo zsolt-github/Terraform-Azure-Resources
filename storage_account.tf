@@ -12,6 +12,7 @@ resource "azurerm_storage_account" "azure-storage_account-1" {
   account_replication_type        = var.az_storage_account_1_replication_type
   enable_https_traffic_only       = true
   access_tier                     = var.az_storage_account_1_acces_tier
+  # min_tls_version                 = var.az_storage_account_1_min_tls_version
   # allow_nested_items_to_be_public = true
 
   depends_on               = [azurerm_resource_group.azure-rg]
