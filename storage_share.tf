@@ -5,6 +5,8 @@ resource "azurerm_storage_share" "azure-storage_share-1" {
   enabled_protocol     = "SMB"
   quota                = 1
 
+  depends_on           = [azurerm_storage_account.azure-storage_account-1]
+
   acl {
     id = "MTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTI"
 

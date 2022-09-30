@@ -1,7 +1,8 @@
 
+# data "azurerm_subscription" "primary" {}
 data "azurerm_client_config" "current" {}
 
-
+/* 
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/virtual_network
 
 data "azurerm_virtual_network" "data-virtual_network" {
@@ -43,4 +44,16 @@ data "azurerm_public_ip" "data-public_ip_1" {
   name                = var.az_public_ip_1_name
   resource_group_name = var.az_resource_group_name
   depends_on          = [azurerm_public_ip.azure-public_ip-1]
+}
+
+*/
+
+# https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/user_assigned_identity
+
+
+
+data "azurerm_user_assigned_identity" "data-user_assigned_identity-1" {
+  name                = var.az_user_assigned_identity_1
+  resource_group_name = var.az_resource_group_name
+  depends_on          = [azurerm_user_assigned_identity.azure-user_assigned_identity-1]
 }

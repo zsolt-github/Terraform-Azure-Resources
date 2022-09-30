@@ -60,10 +60,10 @@ az_storage_account_1_replication_type = "LRS"
 az_storage_account_1_acces_tier       = "Hot"
 az_storage_account_1_min_tls_version  = "TLS_1_2"
 
-az_storage_conainer_1_name            = "sc-demo-tf"
+az_storage_conainer_1_name            = "sc-1-demo-tf"
 az_storage_container_1_access_type    = "blob"
 
-az_storage_share_1_name               = "sd-demo-tf"
+az_storage_share_1_name               = "sd-1-demo-tf"
 az_storage_share_1_access_tier        = "Hot"
 
 
@@ -92,6 +92,9 @@ az_virtual_machine_scale_set_upgrade_mode    = "Rolling"
 # Azure Load Balancer variables
 az_load_balancer_name = "LB-Demo-TF"
 
+
+# Azure User Assigned variables
+az_user_assigned_identity_1 = "UAI-Demo-1"
 
 
 # Azure Container Registry

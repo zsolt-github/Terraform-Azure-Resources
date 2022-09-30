@@ -1,3 +1,23 @@
+# https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/user_assigned_identity
+
+
+output "output-user_assigend_identity_1_id" {
+  value = data.azurerm_user_assigned_identity.data-user_assigned_identity-1.id
+}
+
+output "output-user_assigend_identity_1_client_id" {
+  value = data.azurerm_user_assigned_identity.data-user_assigned_identity-1.client_id
+}
+
+output "output-user_assigend_identity_1_principal_id" {
+  value = data.azurerm_user_assigned_identity.data-user_assigned_identity-1.principal_id
+}
+
+
+
+/*
+
+
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/public_ip
 
 output "output-public_ip_1_address" {
@@ -5,9 +25,6 @@ output "output-public_ip_1_address" {
 }
 
 
-
-
-/*
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/virtual_network
 
 output "output-virtual_network_id" {

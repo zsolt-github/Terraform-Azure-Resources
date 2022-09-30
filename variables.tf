@@ -202,7 +202,7 @@ variable "az_storage_account_1_min_tls_version" {
 
 variable "az_storage_conainer_1_name" {
     type        = string
-    description = "Name for Storage Container 1. (Only lowercase alphanumeric characters and hyphens allowed)"
+    description = "Name for Storage Container 1. (Only lowercase letters, numbers and hyphens allowed. Max length is 3 - 63 characters.)"
 }
 
 variable "az_storage_container_1_access_type" {
@@ -214,7 +214,7 @@ variable "az_storage_container_1_access_type" {
 
 variable "az_storage_share_1_name" {
     type        = string
-    description = "Name for Storage Share 1. (Only lowercase alphanumeric characters and hyphens allowed)"
+    description = "Name for Storage Share 1. (Only lowercase letters, numbers and hyphens allowed)"
 }
 
 variable "az_storage_share_1_access_tier" {
@@ -295,6 +295,12 @@ variable "az_load_balancer_name" {
 }
 
 
+# Variables for the User Assigned Identity
+
+variable "az_user_assigned_identity_1" {
+    type        = string
+    description = "Name for User Assigned Identity 1."
+}
 
 
 
