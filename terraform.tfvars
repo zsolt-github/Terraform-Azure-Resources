@@ -44,10 +44,12 @@ az_public_ip_1_sku  = "Basic"
 
 
 # Azure Virtual Machines variable
-az_virtual_machine_1_name                 = "VM-1-Demo-TF"
+az_windows_virtual_machine_1_name         = "VM-1-Win-Demo-TF"
+az_linux_virtual_machine_1_name           = "VM-1-Linux-Demo-TF"
 az_virtual_machine_1_size                 = "Standard_B2s"
 az_virtual_machine_1_admin_user_name      = "admin"
 az_virtual_machine_1_admin_user_password  = "Passwords"
+az_linux_virtual_machine_1_public_key     = ".ssh/id_rsa.pub"
 az_virtual_machine_1_storage_account_type = "StandardSSD_LRS"
 
 
