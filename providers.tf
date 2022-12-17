@@ -12,6 +12,10 @@ terraform {
       source = "hashicorp/tls"
       version = "~>4.0"
     }
+    null = {
+      source = "hashicorp/null"
+      version = "~>3.0"
+    }
   }
 }
 
@@ -28,4 +32,7 @@ provider "azurerm" {
       purge_soft_deleted_keys_on_destroy = false
     }
   }
+provider "random" {}
+provider "tls" {}
+provider "null" {}
 }

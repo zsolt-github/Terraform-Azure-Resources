@@ -9,9 +9,10 @@ This GitHub repo contains basic Terraform building blocks for the Azure cloud.
 
 | Name | Version |
 |------|---------|
-| azure | 3.20.0 |
+| azure | ~>3.0 |
 | random | ~>3.0 |
 | tls | ~>4.0 |
+| null | ~>3.0 |
 
 
 ### Deployment Instructions
@@ -34,6 +35,7 @@ This GitHub repo contains basic Terraform building blocks for the Azure cloud.
 | [azurerm_subnet_network_security_group_association.azure-nsg_1_association](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subnet_network_security_group_association) | resource |
 | [azurerm_network_interface.azure-net_int-1](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_interface) | resource |
 | [azurerm_public_ip.azure-public_ip-1](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/public_ip) | resource |
+| [azurerm_marketplace_agreement.azure_marketplace-jenkins](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/marketplace_agreement) | resource |
 | [azurerm_windows_virtual_machine.azure-windows_virtual_machine-1](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/windows_virtual_machine) | resource |
 | [azurerm_linux_virtual_machine.azure-linux_virtual_machine-1](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/linux_virtual_machine) | resource |
 | [azurerm_virtual_machine_extension.azure-virtual_machine_extension-1](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_machine_extension) | resource |
@@ -44,3 +46,4 @@ This GitHub repo contains basic Terraform building blocks for the Azure cloud.
 | [azurerm_key_vault_key.azure-key_vault_key-1](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_key) | resource |
 | [tls_private_key.ssh_key-1](https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/private_key) | resource |
 | [random_id.azure-random_id](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/id) | resource |
+| [null_resource.null-enable_az_storage_static_website](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
